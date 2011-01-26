@@ -7,7 +7,7 @@ module Shippinglogic
 
       class Details
         # Each tracking result is an object of this class
-        class Event; attr_accessor :name, :status, :event_time, :event_date, :city, :state, :postal_code, :country, :authorized_agent, :firm_name; end
+        class Event; attr_accessor :name, :type, :event_time, :event_date, :city, :state, :postal_code, :country, :authorized_agent, :firm_name; end
 
         attr_accessor :authorized_agent, :status, :delivery_at, :events
 
@@ -17,7 +17,7 @@ module Shippinglogic
             event = Event.new
             event.authorized_agent = details[:authorized_agent]
             event.name = details[:name]
-            event.status = details[:event]
+            event.type = details[:event]
             event.event_date = details[:event_date]
             event.event_time = details[:event_time]
             event.city = details[:event_city]
